@@ -62,12 +62,12 @@ body
 {
    text-align:center;
    margin-left:10%;
+   position:relative;
 }
 
 .main-element
 {
     display:inline-block;
-    position:relative;
     
 }
 #main-heading
