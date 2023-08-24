@@ -67,6 +67,7 @@ body
 .main-element
 {
     display:inline-block;
+    position:relative;
 }
 #main-heading
 {
@@ -90,7 +91,7 @@ a:hover
 }
 #main-avi
 {
-    position:fixed;
+    position:absolute;
     cursor:pointer;
     opacity:85%;
 }
