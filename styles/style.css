@@ -151,6 +151,7 @@ a:hover
 .social-links
 {
     display:grid;
+    height: auto;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto;
     margin-bottom:10px;
