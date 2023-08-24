@@ -202,30 +202,30 @@ a:hover
 {
     0%{
         
-        background-image:url('../anim/anim1.png');
+        background-image:url('/images/anim/anim1.png');
     }
 
     16.67%{
     
-        background-image:url('../anim/anim2.png');
+        background-image:url('/images/anim/anim2.png');
     }
 
     33.33%{
 
-        background-image:url('../anim/anim3.png');
+        background-image:url('/images/anim/anim3.png');
     }
 
     50%{
-        background-image:url('../anim/anim4.png');
+        background-image:url('/images/anim/anim4.png');
     }
 
     66.67%{
-        background-image:url('../anim/anim3.png');
+        background-image:url('/images/anim/anim3.png');
     }
 
     100%
     {
-        background-image:url('../anim/anim2.png');
+        background-image:url('/images/anim/anim2.png');
 
     }
     
