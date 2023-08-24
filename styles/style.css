@@ -13,7 +13,6 @@ body
 .page
 {
     overflow: hidden;
-    position: fixed;
     background-image: url('/images/anim/anim1.png');
     animation:img-anim 6s ease infinite;
     background-repeat:no-repeat;
