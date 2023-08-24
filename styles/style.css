@@ -8,17 +8,18 @@ body
     font-family:Roboto;
     font-weight:200;
     
+    
 }
 
 .page
 {
     overflow: hidden;
-    position:fixed;
     background-image: url('/images/anim/anim1.png');
     animation:img-anim 6s ease infinite;
     background-repeat:no-repeat;
     background-size:100%;
     background-position-y: 45%;
+    background-attachment:fixed;
     
 }
 
