@@ -10,6 +10,11 @@ let avis = ['/images/capsule.png','/images/public_health.png','/images/kawaii_gr
 let widths = ['5%','7.5%','9%','8.5%']
 let click = 0;
 
+for(let i = 0; i <= 4; i++){
+  const img = new Image();
+  img.src = avis[i];
+  images.push(img);
+}
 $(document).ready(function()
 {
  
