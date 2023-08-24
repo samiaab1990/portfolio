@@ -67,7 +67,7 @@ body
 
 .main-element
 {
-    display:inline-block;
+    display:inline-flex;
     
 }
 #main-heading
