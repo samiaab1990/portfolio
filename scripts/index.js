@@ -7,7 +7,7 @@ for (let i = 1; i <= 4; i++) {
 }
 
 let avis = ['/images/capsule.png','/images/public_health.png','/images/kawaii_graph.png', '/images/kawaii_dev.png'];
-let widths = ['10%','16%','21%','20%']
+let widths = ['11%','16%','21%','20%']
 let click = 0;
 
 for(let i = 0; i <= 4; i++){
