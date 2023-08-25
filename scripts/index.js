@@ -59,7 +59,7 @@ $(document).ready(function()
       if(state === 0)
       {
         state = 1;
-        $('body').css({"background-color":"#FFFFFF", "color":"#1A1A1A"});
+        $('body').css({"background-color":"#F4F4F4", "color":"#1A1A1A"});
         $('a').css("color","#1A1A1A");
 
       }
@@ -67,7 +67,7 @@ $(document).ready(function()
       {
         state = 0; 
         $('body').css({"background-color":"#1A1A1A", "color":"#FFFFFF"});
-        $('a').css("color","#FFFFFF");
+        $('a').css("color","#F4F4F4");
   
       }
    })
