@@ -7,6 +7,7 @@ body
     background-color:#1A1A1A;
     font-family:Roboto;
     font-weight:200;
+    color:#FFFFFF;
     
     
 }
@@ -43,9 +44,7 @@ body
 
 .navbar a 
 {
-    color:#FFFFFF;
     opacity:70%;
-    font-family:Roboto;
     font-weight:bold;
     display:block;
     text-align:center;
@@ -62,8 +61,8 @@ body
 .switch {
     position: relative;
     display: inline-block;
-    width: 55px;
-    height: 25px;
+    width: 50px;
+    height: 20px;
   }
   
   /* Hide default HTML checkbox */
@@ -89,8 +88,8 @@ body
   .slider:before {
     position: absolute;
     content:'☀️';
-    height: 18px;
-    width: 18px;
+    height: 16px;
+    width: 16px;
     left: 1px;
     bottom: 6px;
     background-color: transparent;
@@ -108,15 +107,15 @@ body
   {
     content:'🌙';
   }
-  
+
   input:focus + .slider {
     box-shadow: 0 0 1px #4BC0C8;
   }
   
   input:checked + .slider:before {
-    -webkit-transform: translateX(31px);
-    -ms-transform: translateX(31px);
-    transform: translateX(31px);
+    -webkit-transform: translateX(27px);
+    -ms-transform: translateX(27px);
+    transform: translateX(27px);
   }
   
   /* Rounded sliders */
@@ -154,15 +153,14 @@ body
 #main-heading
 {
     font-size:100px;
-    color:#FFFFFF;
     font-family:Urbanist;
     opacity:85%;
 }
 
 a
 {
-    font-weight:700;
     color:#FFFFFF;
+    font-weight:700;
     opacity:85%;
 }
 
@@ -184,7 +182,7 @@ a:hover
     text-justify:center;
     display:inline-block;
     margin-bottom:30px;
-    margin-left:11%;
+    margin-left:10.5%;
 
 }
 
@@ -192,10 +190,7 @@ a:hover
 {
     opacity:85%;
     font-size:25px;
-    font-family:Roboto;
-    color:#FFFFFF;
-    font-weight:200;
-    
+    font-weight:200;   
 }
 
 .first
@@ -239,7 +234,7 @@ a:hover
     display:flex;
     justify-content:space-around;
     margin-bottom:10px;
-    margin-left:11%;
+    margin-left:10.5%;
 }
 
 .social-button
@@ -264,7 +259,6 @@ a:hover
    position:absolute;
    left:25%;
    top:25%;
-   color:white;
 
 }
 @keyframes fadeIn
