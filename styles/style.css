@@ -6,7 +6,7 @@ body
     /*background-attachment:fixed;*/
     background-color:#1A1A1A;
     font-family:Roboto;
-    font-weight:200;
+    font-weight:300;
     color:#FFFFFF;
     
     
@@ -182,7 +182,7 @@ a:hover
     text-align:left;
     text-justify:center;
     display:inline-block;
-    margin-bottom:30px;
+    margin-bottom:50px;
     margin-left:10.5%;
 
 }
