@@ -48,19 +48,29 @@ function changeAvi(source,width)
 
 // light-dark mode
 
-var state = 0;
 
-$('.switch').click(function(){
+$(document).ready(function()
+{
+  var state = 0;
+  
+   $('.switch input[type="checkbox"]').click(function()
+   
+   {
+      if(state === 0)
+      {
+        state = 1;
+        $('body').css({"background-color":"#FFFFFF", "color":"#1A1A1A"});
+        $('a').css("color","#1A1A1A");
 
-  if(state === 0)
-  {
-    state = 1;
-
-    $(document).ready(function()
-    {
-      $("body").css("background-color","#FFFFFF");
-    });
-
-  }});
-
+      }
+      else
+      {
+        state = 0; 
+        $('body').css({"background-color":"#1A1A1A", "color":"#FFFFFF"});
+        $('a').css("color","#FFFFFF");
+  
+      }
+   })
+   
+});
 
