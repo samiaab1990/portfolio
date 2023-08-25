@@ -23,16 +23,22 @@ body
     
 }
 
-.navbar 
+
+.navbar
 {
-    float:right;
+    float:right; 
+}
+
+.navbar > ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding:0;
 }
 
 .navbar > ul > li
 {
-    list-style-type: none;
     display:inline-block;
-    margin-right:50px;
 }
 
 .navbar a 
@@ -42,6 +48,8 @@ body
     font-family:Roboto;
     font-weight:bold;
     display:block;
+    text-align:center;
+    padding: 14px 16px;
 }
 
 .navbar a:hover
@@ -49,6 +57,9 @@ body
     opacity:100%;
     text-decoration:none;
 }
+
+
+
 .container
 {
     display:flex;
@@ -113,7 +124,7 @@ a:hover
     font-size:25px;
     font-family:Roboto;
     color:#FFFFFF;
-    font-weight:100;
+    font-weight:200;
     
 }
 
