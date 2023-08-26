@@ -9,7 +9,7 @@
 
     --main-background-color: #E7E7E7;
     --font-color:#1A1A1A;
-    --button-color:#E7E7E7;
+    --button-color:#CDCDCD;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,8 +25,8 @@ body
     /*background: linear-gradient(-45deg, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     /*background-attachment:fixed;*/
     background-color: var(--main-background-color);
-    font-family:Roboto;
-    font-weight:300;
+    font-family: "Roboto";
+    font-weight: 300;
     color:var(--font-color);
     
     
