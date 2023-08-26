@@ -1,13 +1,33 @@
+/* Defining the specific variables for regular/dark-mode*/ 
+:root {
+    --main-background-color: #1A1A1A;
+    --font-color:#FFFFFF;
+    --button-color:rgba(255, 255, 255, .15); 
+}
+
+[data-theme="light"] {
+
+    --main-background-color: #E7E7E7;
+    --font-color:#1A1A1A;
+    --button-color:#E7E7E7;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+      content: "dark";
+    }
+}
+
 body
 {
     /*background: #FEAC5E;  /* fallback for old browsers */
     /*background: -webkit-linear-gradient(-45deg, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
     /*background: linear-gradient(-45deg, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     /*background-attachment:fixed;*/
-    background-color:#1A1A1A;
+    background-color: var(--main-background-color);
     font-family:Roboto;
     font-weight:300;
-    color:#FFFFFF;
+    color:var(--font-color);
     
     
 }
@@ -159,7 +179,7 @@ body
 
 a
 {
-    color:#FFFFFF;
+    color:var(--font-color);
     font-weight:700;
     opacity:85%;
 }
@@ -243,7 +263,7 @@ a:hover
     position:relative;
     width:30px;
     height:30px;
-    background-color: rgba(255, 255, 255, .15);  
+    background-color: var(--button-color);  
     backdrop-filter: blur(5px);
     border-radius: 5px;
     border:none;

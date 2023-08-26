@@ -48,29 +48,37 @@ function changeAvi(source,width)
 
 // light-dark mode
 
+ 
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
 
 $(document).ready(function()
-{
-  var state = 0;
+{ 
+  const toggleSwitch = $('.switch input[type="checkbox"]');
   
-   $('.switch input[type="checkbox"]').click(function()
-   
-   {
-      if(state === 0)
-      {
-        state = 1;
-        $('body').css({"background-color":"#F4F4F4", "color":"#1A1A1A"});
-        $('a').css("color","#1A1A1A");
+  if (currentTheme) 
+  {
+    if (currentTheme === 'light') 
+    {
+      toggleSwitch.prop("checked") = true;
+    }
+  }
 
-      }
+  
+   toggleSwitch.change(function()
+   {
+      if(toggleSwitch.prop("checked"))
+      {
+        $(":root").attr('data-theme','light');
+        localStorage.setItem('theme', 'light');
+      } 
+
       else
       {
-        state = 0; 
-        $('body').css({"background-color":"#1A1A1A", "color":"#FFFFFF"});
-        $('a').css("color","#F4F4F4");
-  
+        localStorage.setItem('theme', 'dark');
       }
-   })
-   
+      
+    }
+   ); 
+
 });
 
