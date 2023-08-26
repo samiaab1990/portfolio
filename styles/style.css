@@ -258,6 +258,7 @@ a:hover
     margin-left:10.5%;
 }
 
+
 .social-button
 {
     position:relative;
@@ -273,6 +274,7 @@ a:hover
 .social-button:hover
 {
     background-color: rgba(255, 255, 255, 0.462); 
+    color:var(--font-color) !important;
 }
 
 .fa-brands, .fa-solid
