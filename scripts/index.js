@@ -47,38 +47,36 @@ function changeAvi(source,width)
 }
 
 // light-dark mode
+// adapted largely from https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8
 
- 
-const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+const stored = localStorage.getItem("theme") ? localStorage.getItem("theme"):null;
 
 $(document).ready(function()
 { 
-  const toggleSwitch = $('.switch input[type="checkbox"]');
-  
-  if (currentTheme) 
+  const toggle = ($('.switch input[type="checkbox"]'));
+
+  if(stored)
   {
-    if (currentTheme === 'light') 
+    $(":root").attr("data-theme",stored);
+    
+    if(stored === "light")
     {
-      toggleSwitch.prop("checked") = true;
+      toggle.prop("checked",true); 
     }
   }
 
-  
-   toggleSwitch.change(function()
-   {
-      if(toggleSwitch.prop("checked"))
-      {
-        $(":root").attr('data-theme','light');
-        localStorage.setItem('theme', 'light');
-      } 
-
-      else
-      {
-        localStorage.setItem('theme', 'dark');
-      }
-      
+  toggle.change(function(){
+    
+    if($(this).prop("checked"))
+    {
+      $(":root").attr("data-theme","light");
+      localStorage.setItem("theme","light")
     }
-   ); 
-
+    else
+    {
+      $(":root").attr("data-theme","dark");
+      localStorage.setItem("theme","dark");
+    }
+  });
 });
 
