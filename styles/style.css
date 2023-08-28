@@ -161,8 +161,8 @@ body
     justify-content:center;
     align-items:flex-start;
     margin-left:10%;
-    height:90vh;
-    width:70vw;
+    height:85vh;
+    width:100vw;
 }
 
 .main
@@ -209,7 +209,7 @@ a:hover
     text-align:left;
     display:inline-block;
     margin-bottom:20px;
-    margin-left:18%;
+    margin-left:22%;
 
 }
 
@@ -261,7 +261,8 @@ a:hover
     align-self:auto;
     display:flex;
     justify-content:space-around;
-    margin-left:18.5%;
+    margin-left:22%;
+    margin-bottom:10px
 }
 
 
@@ -349,8 +350,12 @@ a:hover
 
 .about
 {
-    width:500px;
+    width:600px;
     height:500px;
-    border: black solid 3px;
+    align-self:center;
+    opacity:70%;
+    border: var(--font-color) solid 3px;
     border-radius: 75px;
+    box-shadow: 0px 0px 8px #9E9E9E;
+
 }
