@@ -160,15 +160,16 @@ body
     flex-direction: column;
     justify-content:center;
     align-items:flex-start;
-    margin-left:10%;
+    position:absolute;
+    left:25%;
     height:85vh;
     width:100vw;
 }
 
 .main
 {
-   align-self:center;
-   position:relative;
+   align-self:stretch;
+
 }
 
 .main-element
@@ -205,12 +206,11 @@ a:hover
 }
 .animated-intro
 {
-    align-self:auto;
+    align-self:streth;
     text-align:left;
     display:inline-block;
     margin-bottom:20px;
-    margin-left:22%;
-
+    margin-right:20%;
 }
 
 .animated-intro span
@@ -261,7 +261,6 @@ a:hover
     align-self:auto;
     display:flex;
     justify-content:space-around;
-    margin-left:22%;
     margin-bottom:10px
 }
 
@@ -354,9 +353,9 @@ a:hover
     opacity:70%;
     width:600px;
     height:500px;
-    align-self:center;
+    align-self:flex-start;
     border: var(--font-color) solid 3px;
-    border-radius: 75px;
+    border-radius: 20px;
     box-shadow: 0px 0px 8px #9E9E9E;
 
 }
