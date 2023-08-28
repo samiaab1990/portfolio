@@ -350,10 +350,11 @@ a:hover
 
 .about
 {
+    color:#FFFFFF;
+    opacity:70%;
     width:600px;
     height:500px;
     align-self:center;
-    opacity:70%;
     border: var(--font-color) solid 3px;
     border-radius: 75px;
     box-shadow: 0px 0px 8px #9E9E9E;
