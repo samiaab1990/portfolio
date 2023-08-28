@@ -52,15 +52,19 @@ body
 
 .navbar > ul
 {
-    list-style-type: none;
+    
     margin: 0;
-    padding:0;
+    padding: 0;
+
 }
 
 .navbar > ul > li
 {
     display:inline-block;
+
 }
+
+
 
 .navbar a 
 {
@@ -76,6 +80,7 @@ body
     opacity:100%;
     text-decoration:none;
 }
+
 
 /* The switch - the box around the slider */
 .switch {
@@ -155,13 +160,14 @@ body
     flex-direction: column;
     justify-content:center;
     align-items:flex-start;
+    margin-left:10%;
     height:90vh;
     width:70vw;
 }
+
 .main
 {
-   text-align:center;
-   margin-left:10%;
+   align-self:center;
    position:relative;
 }
 
@@ -199,11 +205,11 @@ a:hover
 }
 .animated-intro
 {
+    align-self:auto;
     text-align:left;
-    text-justify:center;
     display:inline-block;
-    margin-bottom:50px;
-    margin-left:10.5%;
+    margin-bottom:20px;
+    margin-left:18%;
 
 }
 
@@ -211,7 +217,7 @@ a:hover
 {
     opacity:85%;
     font-size:25px;
-    font-weight:200;   
+ 
 }
 
 .first
@@ -252,10 +258,10 @@ a:hover
 
 .social-links
 {
+    align-self:auto;
     display:flex;
     justify-content:space-around;
-    margin-bottom:10px;
-    margin-left:10.5%;
+    margin-left:18.5%;
 }
 
 
@@ -286,8 +292,9 @@ a:hover
    position:absolute;
    left:25%;
    top:25%;
-
 }
+
+
 @keyframes fadeIn
 {
     0%{
@@ -339,3 +346,11 @@ a:hover
     
 }
 
+
+.about
+{
+    width:500px;
+    height:500px;
+    border: black solid 3px;
+    border-radius: 75px;
+}
