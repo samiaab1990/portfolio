@@ -35,11 +35,11 @@ body
 .page
 {
     overflow: hidden;
-    background-image: url('/images/anim/anim1.png');
+    background-image: url('../images/anim/anim1.png');
     animation:img-anim 6s ease infinite;
     background-repeat:no-repeat;
     background-size:100%;
-    background-position-y: 45%;
+    background-position-y: 50%;
     background-attachment:fixed;
     
 }
@@ -160,16 +160,15 @@ body
     flex-direction: column;
     justify-content:center;
     align-items:flex-start;
-    position:absolute;
-    left:25%;
-    height:85vh;
+    height:90vh;
     width:100vw;
+    padding: 0 15% 0 15%;
 }
 
 .main
 {
-   align-self:stretch;
-
+   align-self:flex-start;
+   position:relative;
 }
 
 .main-element
@@ -206,11 +205,11 @@ a:hover
 }
 .animated-intro
 {
-    align-self:streth;
+    align-self:auto;
     text-align:left;
     display:inline-block;
     margin-bottom:20px;
-    margin-right:20%;
+
 }
 
 .animated-intro span
@@ -317,30 +316,30 @@ a:hover
 {
     0%{
         
-        background-image:url('/images/anim/anim1.png');
+        background-image:url('../images/anim/anim1.png');
     }
 
     16.67%{
     
-        background-image:url('/images/anim/anim2.png');
+        background-image:url('../images/anim/anim2.png');
     }
 
     33.33%{
 
-        background-image:url('/images/anim/anim3.png');
+        background-image:url('../images/anim/anim3.png');
     }
 
     50%{
-        background-image:url('/images/anim/anim4.png');
+        background-image:url('../images/anim/anim4.png');
     }
 
     66.67%{
-        background-image:url('/images/anim/anim3.png');
+        background-image:url('../images/anim/anim3.png');
     }
 
     100%
     {
-        background-image:url('/images/anim/anim2.png');
+        background-image:url('../images/anim/anim2.png');
 
     }
     
@@ -349,13 +348,10 @@ a:hover
 
 .about
 {
-    color:#FFFFFF;
-    opacity:70%;
-    width:600px;
+    width:500px;
     height:500px;
-    align-self:flex-start;
     border: var(--font-color) solid 3px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 8px #9E9E9E;
+    border-radius: 75px;
+    box-shadow: 0px 8px 8px #9E9E9E;
 
 }

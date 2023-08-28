@@ -4,11 +4,11 @@ let images = [];
 for (let i = 1; i <= 4; i++) 
 {
     const img = new Image(3210,560);
-    img.src = `/images/anim/anim${i}.png`;
+    img.src = `./images/anim/anim${i}.png`;
     images.push(img);
 }
 
-let avis = ['/images/capsule.png','/images/public_health.png','/images/kawaii_graph.png', '/images/kawaii_dev.png'];
+let avis = ['./images/capsule.png','./images/public_health.png','./images/kawaii_graph.png', './images/kawaii_dev.png'];
 let widths = ['11.5%','16%','21%','20%']
 let click = 0;
 
