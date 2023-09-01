@@ -3,6 +3,9 @@
     --main-background-color: #1A1A1A;
     --font-color:#FFFFFF;
     --button-color:rgba(255, 255, 255, .15); 
+    --div-bg: rgba(26, 26, 26, .7);
+    --shadow: rgba(231, 231, 231, 0.2);
+    --hover-effect: hsla(0, 0%, 100%,.85);
 }
 
 [data-theme="light"] {
@@ -10,6 +13,9 @@
     --main-background-color: #E7E7E7;
     --font-color:#1A1A1A;
     --button-color:#CDCDCD;
+    --div-bg:rgba(231, 231, 231, .7);
+    --shadow:rgba(100, 100, 111, 0.2);
+    --hover-effect: hsla(0, 0%, 10%,.85);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,8 +31,8 @@ body
     /*background: linear-gradient(-45deg, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     /*background-attachment:fixed;*/
     background-color: var(--main-background-color);
-    font-family: "Roboto";
-    font-weight: 300;
+    font-family: "Saira";
+    font-weight: 100;
     color:var(--font-color);
     
     
@@ -35,6 +41,7 @@ body
 .page
 {
     overflow: hidden;
+    height:100vh;
     background-image: url('../images/anim/anim1.png');
     animation:img-anim 6s ease infinite;
     background-repeat:no-repeat;
@@ -47,38 +54,43 @@ body
 
 .navbar
 {
-    float:right; 
+    float:right;  
 }
 
 .navbar > ul
 {
-    
+    list-style-type:none;
     margin: 0;
     padding: 0;
-
+    
 }
 
-.navbar > ul > li
+
+.navbar > ul > li 
 {
     display:inline-block;
-
 }
 
-
-
+a
+{
+    color:var(--font-color);
+}
 .navbar a 
 {
+    
     opacity:70%;
-    font-weight:bold;
+    font-size:20px;
     display:block;
     text-align:center;
     padding: 14px 16px;
+    font-weight:600 !important;
 }
 
 .navbar a:hover
 {
     opacity:100%;
     text-decoration:none;
+    color:#4BC0C8;
 }
 
 
@@ -153,16 +165,32 @@ body
   }
 
   
-  
 .container
 {
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items:flex-start;
+    
     height:90vh;
     width:100vw;
     padding: 0 15% 0 15%;
+    scroll-snap-align:end;
+    scroll-snap-type:y mandatory;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+    
+}
+
+.container::-webkit-scrollbar{
+    display: none;
+  }
+
+section
+{
+    height:90vh;
+    display:flex;
+    position:relative;
+    flex-direction: column;
+    justify-content:center;
+    align-items:flex-start;
 }
 
 .main
@@ -182,20 +210,15 @@ body
     font-family:Urbanist;
     opacity:85%;
 }
-
-a
+#secondary-heading
 {
-    color:var(--font-color);
-    font-weight:700;
+    font-size:100px;
+    font-family:Urbanist;
     opacity:85%;
+    color: var(--font-color) !important;
+
 }
 
-a:hover
-{
-    font-weight:700;
-    color:#4BC0C8;
-    text-decoration:none;
-}
 #main-avi
 {
     
@@ -212,13 +235,54 @@ a:hover
 
 }
 
+/* adapted from https://css-tricks.com/css-link-hover-effects/*/
+
 .animated-intro span
 {
     opacity:85%;
-    font-size:25px;
+    font-size:30px;
  
 }
 
+.animated-intro a
+{
+    font-weight: 700 !important;
+    position:relative;
+
+}
+
+.animated-intro a::before {
+    content: '';
+    background-color: var(--font-color);
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 100%;
+    height: 2px;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+  }
+
+.animated-intro a:hover
+{
+    font-weight:bold !important;
+    color:  var(--main-background-color);
+    text-decoration:none;
+}
+
+.animated-intro a:hover::before {
+    bottom: 0;
+    height: 100%;
+    background-color: var(--hover-effect);
+   
+  }
+.active
+{
+    font-weight:bold !important;
+    color:#4BC0C8;
+    opacity:100% !important;
+    text-decoration:none;
+}
 .first
 {
     display:inline-block;
@@ -286,7 +350,7 @@ a:hover
     color:var(--font-color) !important;
 }
 
-.fa-brands, .fa-solid
+.fa-linkedin-in, .fa-github, .fa-envelope, .fa-behance
 { 
    position:absolute;
    left:25%;
@@ -348,10 +412,252 @@ a:hover
 
 .about
 {
-    width:500px;
-    height:500px;
-    border: var(--font-color) solid 3px;
-    border-radius: 75px;
-    box-shadow: 0px 8px 8px #9E9E9E;
+    position:relative;
+    overflow: hidden;
+    padding:5px;
+    width: 100%;
+    height: 75%;
+    background-color:var(--div-bg);
+    border-radius: 20px;
+    box-shadow: 
+    /* adapted from https://codyhouse.co/nuggets/beautiful-css-shadows*/ 
+    inset 0 0 0.5px 1px hsla(0, 0%,  
+    100%, 0.075),
+    /* shadow ring */
+    0 0 0 1px hsla(0, 0%, 0%, 0.05),
+    /* multiple soft shadows */
+    0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+    0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+    0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+}
+
+
+.skills::-webkit-scrollbar {
+    width: .2em;
+  }
+   
+.skills::-webkit-scrollbar-track {
+    width: .2em;
+  }
+   
+.skills::-webkit-scrollbar-thumb {
+    width: .2em;
+    background: transparent;
+    outline: 1px solid var(--font-color);
+    opacity:30%;
+    border-radius:10px;
+    padding:3px;
+  }
+
+.about-summary 
+{
+    display:block;
+    position:absolute;
+    word-wrap:wrap;
+    width:100%;
+    height:100%;
+    font-size:20px;
+    font-family: 'Roboto Mono' !important;
+    font-weight:400;
+    opacity:75%;
+    overflow:auto;
+}
+
+.skills
+{
+    display:none;
+    position:absolute;
+    flex-direction: column;
+    width:98%;
+    height:65%;
+    font-family:'VT323' !important;
+    font-size:21px;
+    font-weight:400;
+    opacity:75%;
+    overflow:auto;
+}
+
+.languages, .backend, .databases, .tools, .version-control
+{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+.hobbies
+{
+    display:none;
+    position:absolute;
+    width:100%;
+    height:100%;
+    font-size:20px;
+    font-family: 'Roboto Mono' !important;
+    font-weight:400;
+    opacity:75%;
+    overflow:auto;
+}
+
+.this-page
+{
+    display:none;
+    position:absolute;
+    width:100%;
+    height:100%;
+    font-size:20px;
+    font-family: 'Roboto Mono' !important;
+    font-weight:400;
+    opacity:75%;
+    overflow:auto;
+}
+.div-change-buttons
+{
+    position:absolute;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap: 1em;
+    bottom:5%;
+    width:100%;
+}
+.dot{
+opacity:30%;
+cursor:pointer;
+width:10px;
+height: 10px;
+border: var(--font-color) solid 1px;
+border-radius:50%;
+}
+
+.dot:hover
+{
+    background-color:var(--font-color);
+}
+.next-page
+{
+    opacity:30%;
+    font-weight:700 !important;
+    cursor:pointer;
+    position:absolute;
+    right:2%;
+}
+
+.next-page:hover
+{
+    color: var(--font-color);
+    opacity: 100%;
+    text-decoration:none;
+}
+
+
+
+h4
+{
+    font-family:'Roboto Mono' !important;
+    font-weight:bold;
+    font-size:20px;
+}
+  @keyframes linear-transition {
+    0% {
+      visibility:visible;
+      opacity:0;
+    }
+    1% {
+    
+      opacity:0;
+
+    }
+    99% {
+        opacity:.85;
+      }
+    100% {
+        visibility:hidden;
+        opacity:.85;
+      }
+  }
+
+  .arrow
+  {
+    display:inline-block;
+    position:relative;
+    left:100%;
+    bottom:10%;
+  }
+
+  .arrow .shape
+  { 
+   
+    position:absolute;
+    width:25px;
+    height:25px;
+    opacity:.2;
+    border-right: 8px solid var(--font-color);
+    border-bottom: 8px solid var(--font-color);
+    transform:rotate(45deg);
 
 }
+
+.arrow .label
+{
+    display:none;
+    position:absolute;
+    left:35px;
+    top:5px;
+    font-weight:700;
+}
+
+.arrow .shape:hover
+{
+    animation: animate 1s;
+    opacity:1;   
+}
+
+.arrow .shape:hover + .label
+{
+    display:block;
+}
+
+
+
+@keyframes animate {
+    0% {
+        transform: rotate(45deg) translate(0px, 0px);
+    }
+    50% {
+        transform: rotate(45deg) translate(10px, 10px);
+    }
+    100% {
+        transform: rotate(45deg) translate(0px, 0px);
+
+    }
+}
+
+
+.skill-icon
+{
+    display: flex;
+    flex-direction:column;
+    width:65px;
+    height:65px;
+}
+
+.skill-icon img
+{
+   align-self:center;
+   width:30px;
+   height:30px;
+   
+}
+
+.skill-icon i
+{
+   align-self:center;
+   width:30px;
+   height:30px;
+   font-size:25px;
+   
+}
+
+.skill-icon span
+{
+   align-self:center;
+}
+
