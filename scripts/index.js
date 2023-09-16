@@ -1,14 +1,14 @@
-// Load images so they don't flicker 
+// Solves image flickering problem when websites loads 
 let images = [];
 
 for (let i = 1; i <= 4; i++) 
 {
     const img = new Image(3210,560);
-    img.src = `./images/anim/anim${i}.png`;
+    img.src = `/images/anim/anim${i}.png`;
     images.push(img);
 }
 
-let avis = ['./images/capsule.png','./images/public_health.png','./images/kawaii_graph.png', './images/kawaii_dev.png'];
+let avis = ['/images/capsule.png','/images/public_health.png','/images/kawaii_graph.png', '/images/kawaii_dev.png'];
 let widths = ['11.5%','16%','21%','20%']
 let click = 0;
 
@@ -19,42 +19,47 @@ for(let i = 0; i <= 4; i++)
   images.push(img);
 }
 
-// avitar change 
+
+// stores light/dark selection 
+const stored = localStorage.getItem("theme") ? localStorage.getItem("theme"):null;
+
+// for divs 
+const abt_divs = [];
+const desc_divs =['About.','Skills.','Hobbies.','This Page.']
+
+
+
 $(document).ready(function()
 {
  
-  // Change avis by clicking the avatar itself
-  $("#main-avi").click(function()
-  {
-    click++;
+    // Change avis by clicking the avatar itself
+    $("#main-avi").click(function()
+    {
+      click++;
 
-    if(click < avis.length)
-    {
-      $(this).attr({'src': avis[click], 'width': widths[click]});
-    }
-    else
-    {
-      click = 0;
-      $(this).attr({'src': avis[click], 'width': widths[click]});
-    }
+      if(click < avis.length)
+      {
+        $(this).attr({'src': avis[click], 'width': widths[click]});
+      }
+      else
+      {
+        click = 0;
+        $(this).attr({'src': avis[click], 'width': widths[click]});
+      }
 
   });
 
-});
+  // Change avis with hover 
+  
+  $('.animated-intro span a').each(function(i)
+  {
+    $($('.animated-intro span a')[i]).hover(function()
+    {
+      $('#main-avi').attr({'src': avis[i], 'width': widths[i]});
+    });
+  });
 
-// Create a function that changes avi upon link click 
-function changeAvi(source,width)
-{
-  $("#main-avi").attr({'src': source, 'width': width}); 
-}
-
-// light-dark mode
-// adapted largely from https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8
-
-const stored = localStorage.getItem("theme") ? localStorage.getItem("theme"):null;
-
-$(document).ready(function()
-{ 
+  // Light/dark mode 
   const toggle = ($('.switch input[type="checkbox"]'));
 
   if(stored)
@@ -80,65 +85,54 @@ $(document).ready(function()
       localStorage.setItem("theme","dark");
     }
   });
-});
 
-
-$(document).ready(function()
-{
+  // about section 
   $($('.navbar a')[0]).addClass('active');
 
-$('.container').on('scroll', function()
- {
- $('section').each(function(i)
- {
-    var section_id = $($('section')[i]).attr('id');
-    var height_threshold = document.getElementById(section_id).offsetTop * .75;
-
-    if($('.container').scrollTop() >= height_threshold)
+  $('.container').on('scroll', function()
+  {
+    $('section').each(function(i)
     {
-  
-      $('.navbar a').each(function(i)
+      var section_id = $($('section')[i]).attr('id');
+      var height_threshold = document.getElementById(section_id).offsetTop * .75;
+      
+      if($('.container').scrollTop() >= height_threshold)
       {
-        $($('.navbar a')[i]).removeClass('active');
-      });
+        $('.navbar a').each(function(i)
+        {
+          $($('.navbar a')[i]).removeClass('active');
+        });
 
-      $($('.navbar a')[i]).addClass('active');
-    }
+        $($('.navbar a')[i]).addClass('active');
+      }
   
- });
+    });
   
-});
-});
+  });
 
-const abt_divs = [];
-const desc_divs =['About.','Skills.','Hobbies.','This Page.']
-
-$(document).ready(function()
-{ 
   for(let i = 1; i < $('.about > div').length - 1; i++)
   {
     abt_divs.push($($('.about > div')[i]).attr('class'));
   }
-
-});
-
-$(document).ready(function()
-{ 
+  
   for(let i = 0; i < abt_divs.length; i++)
   {
-    if($("." + abt_divs[i]).css('display') === 'block')
+    if($("." + abt_divs[i]).css('display') != "none")
     {
       $('.div-change-buttons > a:nth-child(' + (i + 1) + ')').css('background-color','var(--font-color)');
     }
   }
 
-});
+$('.skill-buttons').each(function()
+{
 
+});
+});
 
 function changeDiv(div)
 {
 
-  $("." + div).css({'display':'block','animation':'linear-transition 1s'});
+  $("." + div).css({'display':'inline-block','animation':'linear-transition 1s'});
 
   for(let i = 0; i < abt_divs.length; i++)
   {
@@ -169,4 +163,3 @@ function changeDiv(div)
     }
   }
 }
-
