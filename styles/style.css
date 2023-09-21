@@ -11,6 +11,7 @@
   --shine-color: #ffffff;
   --button-hover: rgba(255, 255, 255, .2);
   --button-color: #1A1A1A;
+  --button-accent: rgba(97, 97, 97, 0.805);
 }
 
 [data-theme=light] {
@@ -25,6 +26,7 @@
   --shine-color: rgb(199, 199, 199);
   --button-hover: rgba(180, 180, 180, 0.5);
   --button-color: #FCFCFC;
+  --button-accent:rgba(184, 184, 184, 0.805);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -439,7 +441,6 @@ section {
 .about-summary {
   display: block;
   position: absolute;
-  word-wrap: wrap;
   width: 100%;
   height: 100%;
   font-size: 20px;
@@ -463,54 +464,40 @@ section {
 
 .skill-buttons {
   display: flex;
-  font-size: 15px;
+  font-size: 13px;
   gap: 5px;
-  margin-left: 3px;
   margin-top: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-/* CSS */
 .skill-buttons > div {
-  font-size: 15px;
-  justify-content: center;
-  align-items: center;
-  background-color: #fbfbfb;
-  border-radius: 4px;
-  /*border: 1px solid var(--font-color);*/
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-  box-sizing: border-box;
-  color: #36395A;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: "Roboto Mono";
-  height: 35px;
-  line-height: 1;
-  list-style: none;
-  overflow: hidden;
-  padding-left: 5px;
-  padding-right: 5px;
-  text-align: left;
-  text-decoration: none;
-  transition: box-shadow 0.15s, transform 0.15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow, transform;
+  position: relative;
+  border: 1px solid var(--font-color);
+  display: inline-block;
+  padding: 4px;
+  border-radius: 8px;
+  background-color: var(--main-background-color);
+  transform-style: preserve-3d;
+  transition: all 175ms cubic-bezier(0, 0, 1, 1);
 }
 
-.skill-buttons > div:focus {
-  box-shadow: #eeeeee 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #eeeeee 0 -3px 0 inset;
-}
-
-.skill-buttons > div:hover {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-  transform: translateY(-2px);
-}
-
-.skill-buttons > div:active {
-  box-shadow: #eeeeee 0 3px 7px inset;
-  transform: translateY(2px);
+.skill-buttons > div::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: content-box;
+  background-color: var(--button-accent);
+  border: inherit;
+  border-radius: inherit;
+  transform: translate3d(-1px, 4px, -5px);
+  transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  z-index: -20;
 }
 
 /* adapted from https://css-tricks.com/css-link-hover-effects/*/
@@ -661,8 +648,8 @@ h4 {
   height: 65px;
   -webkit-transform: perspective(5px) translateZ(0);
   transform: perspective(5px) translateZ(0);
-  -webkit-transition-duration: 0.8s;
-  transition-duration: 0.8s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
   -webkit-transition-property: transform;
   transition-property: transform;
 }
